@@ -79,8 +79,8 @@ function changeBackground() {
     s = s2;
     console.log(s);
     if(linear.checked){
-        ground.style.background = "linear-gradient(to "+direction.value+"," + s + ")";
-        res.value = "linear-gradient(to "+direction.value+"," + s + ")";
+        ground.style.background = "linear-gradient("+degree.value+"deg," + s + ")";
+        res.value = "linear-gradient("+degree.value+"deg," + s + ")";
     }
     if(radial.checked){
         ground.style.background = "radial-gradient(" + s + ")";
@@ -100,7 +100,20 @@ copy.onclick = ()=>{
 direction.oninput = function(){
     ground.style.background = "linear-gradient(to "+direction.value+"," + p + ")";
     res.value = "linear-gradient(to "+direction.value+"," + p + ")";
-    degree.value = '20';
+    switch(direction.value){
+        case "right":
+            degree.value = '90';
+            break;
+        case "left":
+            degree.value = '270';
+            break;
+        case "top":
+            degree.value = '-180';
+            break;
+        case "bottom":
+            degree.value = '180';
+            break;
+    }
 }
 degree.oninput = function(){
     ground.style.background = "linear-gradient("+degree.value+"deg ," + p + ")";
@@ -110,12 +123,10 @@ degree.oninput = function(){
 linear.onclick = ()=>{
     ground.style.background = "linear-gradient(to "+direction.value+"," + p + ")";
     res.value = "linear-gradient(to "+direction.value+"," + p + ")";
-    console.log('linear')
-        linearTools.style.display = 'block';
+    linearTools.style.display = 'block';
 }
 radial.onclick = ()=>{
     ground.style.background = "radial-gradient(" + p + ")";
     res.value = "radial-gradient("+ p + ")";
-    console.log('radial')
-        linearTools.style.display = 'none';
+    linearTools.style.display = 'none';
 }
