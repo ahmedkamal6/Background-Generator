@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header>
+      <h4>back ground generator</h4>
+    </header>
+    <main>
+      <div class="toolsColors">
+        <div id="tools">
+          <button id="add">+</button>
+          <div>
+            <label for="gradientSwitch">Choose Gradient Method:</label><br />
+            <input type="radio" name="gradient" id="linear" checked /><label
+              for="linear"
+              >Linear</label
+            ><br />
+            <input type="radio" name="gradient" id="radial" /><label
+              for="radial"
+              >Radial</label
+            >
+          </div>
+          <div id="linear-tools">
+            <div>
+              <label for="direction">Choose direction:</label>
+              <select id="direction">
+                <option value="right">Right</option>
+                <option value="left">Left</option>
+                <option value="top">Top</option>
+                <option value="bottom">Bottom</option>
+              </select>
+            </div>
+            <div>
+              <label for="degree">Degree:</label>
+              <input type="range" id="degree" min="0" max="360" />
+            </div>
+          </div>
+        </div>
+        <div class="container"></div>
+        <div id="saveBackground">
+          <div id="background"></div>
+        </div>
+      </div>
+
+      <div id="res">
+        <input type="text" id="result" />
+        <button id="copy" class="resBtn">Copy Code For BackGround</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
